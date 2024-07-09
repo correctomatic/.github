@@ -61,12 +61,6 @@ The repositories in this block are intented for deploying the Correctomatic syst
 | [ansible-vps](https://github.com/correctomatic/) | Ansible playbook for provisioning correctomatic in a single VPS  |
 
 
-
-| Repository 	| Description 	|
-|------------	|-------------  |
-| [](https://github.com/correctomatic/) |  |
-| [](https://github.com/correctomatic/) 	|  	|
-
 ### Proofs of concept
 
 The following repositories are early tests and proof of concepts, most of them are private and will probably be deleted in the future.
