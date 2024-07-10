@@ -6,6 +6,46 @@ README for correctomatic
 
 TO-DO
 
+The Correctomatic is a system for runing corrections
+
+### How does it work
+
+```mermaid
+sequenceDiagram
+    LMS->>API: OLA
+    Correctomatic System->>+API: Hello John, how are you?
+    Correctomatic System->>+API: John, can you hear me?
+    API-->>-Correctomatic System: Hi Alice, I can hear you!
+    API-->>-Correctomatic System: I feel great!
+```
+
+### API
+
+TO-DO
+
+- Endpoint for creating corrections
+- Correctomatic response
+
+### Container API
+
+TO-DO
+
+### LTI Integration
+
+TO-DO
+
+
+## Architecture
+
+TO-DO
+```mermaid
+sequenceDiagram
+    LMS->>API: OLA
+    Correctomatic System->>+API: Hello John, how are you?
+    Correctomatic System->>+API: John, can you hear me?
+    API-->>-Correctomatic System: Hi Alice, I can hear you!
+    API-->>-Correctomatic System: I feel great!
+```
 
 ## Development
 
@@ -60,6 +100,12 @@ The repositories in this block are intented for deploying the Correctomatic syst
 |------------	|-------------  |
 | [ansible-vps](https://github.com/correctomatic/) | Ansible playbook for provisioning correctomatic in a single VPS  |
 
+
+
+| Repository 	| Description 	|
+|------------	|-------------  |
+| [](https://github.com/correctomatic/) |  |
+| [](https://github.com/correctomatic/) 	|  	|
 
 ### Proofs of concept
 
