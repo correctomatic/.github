@@ -57,8 +57,6 @@ TO-DO
 
 ### Respositories for corrections
 
-TO-DO
-
 | Repository 	| Description 	|
 |------------	|-------------  |
 | [correction-test-java](https://github.com/correctomatic/correction-test-java) | Test for correcting Java exercises |
@@ -81,7 +79,6 @@ you will need to use them if you want to contribute to the project. If you only 
 
 You can use these repositories to help you develop the Correctomatic system. They are not necessary for creating an exercise.
 
-
 | Repository 	| Description 	|
 |------------	|-------------  |
 | [correctomatic-server](https://github.com/correctomatic/correctomatic-server) | Docker compose for launching the full Correctomatic system in local |
@@ -90,22 +87,14 @@ You can use these repositories to help you develop the Correctomatic system. The
 | [moodle-development](https://github.com/correctomatic/moodle-development)	| Development environment for moodle, with debug, in case you need to develop the LTI app 	|
 
 
-
 ### Repositories for deployment
 
 The repositories in this block are intented for deploying the Correctomatic system.
 
-
 | Repository 	| Description 	|
 |------------	|-------------  |
+| [runner-image](https://github.com/correctomatic/runner-image) | Docker image with the runner processes. You can find it in [DockeHub](https://hub.docker.com/r/correctomatic/runner)  |
 | [ansible-vps](https://github.com/correctomatic/) | Ansible playbook for provisioning correctomatic in a single VPS  |
-
-
-
-| Repository 	| Description 	|
-|------------	|-------------  |
-| [](https://github.com/correctomatic/) |  |
-| [](https://github.com/correctomatic/) 	|  	|
 
 ### Proofs of concept
 
