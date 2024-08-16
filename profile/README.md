@@ -94,6 +94,7 @@ The repositories in this block are intented for deploying the Correctomatic syst
 | Repository 	| Description 	|
 |------------	|-------------  |
 | [runner-image](https://github.com/correctomatic/runner-image) | Docker image with the runner processes. You can find it in [DockeHub](https://hub.docker.com/r/correctomatic/runner)  |
+| [API-image](https://github.com/correctomatic/API-image) | Docker image with the correctomatic API. You can find it in [DockeHub](https://hub.docker.com/r/correctomatic/api)  |
 | [ansible-vps](https://github.com/correctomatic/) | Ansible playbook for provisioning correctomatic in a single VPS  |
 
 ### Proofs of concept
