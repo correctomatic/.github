@@ -1,18 +1,73 @@
 # Correctomatic
 
-README for correctomatic
+[Repositories list](#repositories)
 
-## What is Correctomatic?
+## What is the Correctomatic?
+
+The Correctomatic is a system designed to correct students' work automatically. It is primarily intended to correct technical
+software exercises, but can also be used to correct other types of assignments.
+
+It uses an API to send corrections and can be integrated with LMS systems using the LTI 1.3 standard.
+
+To correct the exercises, it uses Docker containers with images that can be prepared for any kind of correction. Templates are prepared for some typical types of corrections such as testing with Jest, JUnit or Cypress.
+
+### How to use it
+
+#### Provisioning the system
+
+The easiest way to deploy the system is using the [correctomatic-in-a-box](https://github.com/correctomatic/correctomatic-in-a-box). It will provision the full system in a single server using ansible in about 10 minutes. It
+will also provision a Docker registry, so you can push your correction images to it and keep them private. If you need more fine tunning keep reading, but if you're starting, this is the best way to go.
+
+For a more detailed provisioning, you must take in account that the Correctomatic has some components:
+- A Redis server
+- The API
+- The starter
+- The completer
+- The notifier
+- The LTI app
+- A Docker server
+
+The API, starter, completer and notifier communicate using a Redis server. The LTI app uses the API and it is an independent component. The Docker server is an standard one, used to run the correction images.
+
+Those components are independent and can be deployed in different servers. You can also have duplicated "blocks" of them, they only need to share the same Redis and Docker servers. For example, you can have two starters, two completers and two notifiers in different machines, and they can work in parallel, each one using a different Docker server.
+
+There are images for the API, the starter, the completer and the notifier in the [DockerHub](https://hub.docker.com/u/correctomatic). You can use them to deploy the system in a Kubernetes cluster, for example. You can also check the [correctomatic-in-a-box](https://github.com/correctomatic/correctomatic-in-a-box) repository and the images' repositories for more information about how to configure them.
+
+#### Integration into a LMS using LTI 1.3
+
+The Correctomatic system can be integrated into a LMS using the LTI 1.3 standard. The LMS sends the student's work to the Correctomatic system, which corrects it and sends the result back to the LMS.
+
+There is more information about how to run and integrate the App in the [App's repository](https://github.com/correctomatic/correctomatic-app). It's still in development, but it's functional.
+
+#### Using the API
+
+The corrections can be sent to the system using the API. The API has an endpoint to send the corrections and will send the results as a webhook.
 
 TO-DO
 
-The Correctomatic is a system for runing corrections
+```mermaid
+sequenceDiagram
+    participant LMS
+    participant Correctomatic API
+    participant API
+    participant Correctomatic System
+    LMS->>APP: Interface for sending works
+    Correctomatic System->>+API: Hello John, how are you?
+    Correctomatic System->>+API: John, can you hear me?
+    API-->>-Correctomatic System: Hi Alice, I can hear you!
+```
 
 ### How does it work
 
+TO-DO
+
 ```mermaid
 sequenceDiagram
-    LMS->>API: OLA
+    participant LMS
+    participant Correctomatic APP
+    participant API
+    participant Correctomatic System
+    LMS->>APP: Interface for sending works
     Correctomatic System->>+API: Hello John, how are you?
     Correctomatic System->>+API: John, can you hear me?
     API-->>-Correctomatic System: Hi Alice, I can hear you!
@@ -56,9 +111,13 @@ TO-DO
 
 
 ### Respositories for corrections
+These repositories serves as the base for creating exercises. When creating an exercise, it's useful to use one of these
+repositories as a base: it will save you lots of time and effort.
 
 | Repository 	| Description 	|
 |------------	|-------------  |
+| [correction-jest](https://github.com/correctomatic/correction-jest) | Corrects Javascript exercises using Jest |
+| [correction-cypress](https://github.com/correctomatic/correction-cypress) | Corrects exercises using Cypres |
 | [correction-test-java](https://github.com/correctomatic/correction-test-java) | Test for correcting Java exercises |
 | [correction-test-chatgpt](https://github.com/correctomatic/correction-test-chatgpt) 	|  Test for correcting exercises using a LLM	|
 
